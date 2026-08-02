@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="邏輯閘沙盒：開關、AND／OR／NOT、LED 與接線的數位邏輯小品。純前端 Playgrounds SAM。"
+    />
+    <title>邏輯閘沙盒</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <h1>邏輯閘沙盒</h1>
+        <p class="tagline">開關 · 閘 · 接線 · LED</p>
+      </header>
+      <p class="note">
+        第一版：理想二值、無延遲。點輸出腳再點輸入腳接線；拖曳移動元件；Delete
+        刪選取。點開關切換 0／1。教學玩具，不是 HDL／EDA。
+      </p>
+      <p class="hint-line" id="note">…</p>
+
+      <div class="toolbar">
+        <div class="palette" id="palette" aria-label="元件">
+          <button type="button" class="chip" data-kind="switch">開關</button>
+          <button type="button" class="chip" data-kind="not">NOT</button>
+          <button type="button" class="chip" data-kind="and">AND</button>
+          <button type="button" class="chip" data-kind="or">OR</button>
+          <button type="button" class="chip" data-kind="led">LED</button>
+        </div>
+        <div class="controls">
+          <button type="button" id="btn-half" class="secondary">半加器</button>
+          <button type="button" id="btn-and" class="secondary">AND 範例</button>
+          <button type="button" id="btn-del" class="secondary">刪除選取</button>
+          <button type="button" id="btn-clear" class="secondary">清空</button>
+        </div>
+      </div>
+
+      <canvas id="c" width="720" height="420" aria-label="邏輯電路畫布"></canvas>
+      <p class="status" id="status">…</p>
+      <p class="hint">
+        Playgrounds <a href="https://samkuo.me/playgrounds/">遊樂場</a> 範本小品。
+      </p>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
